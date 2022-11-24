@@ -45,3 +45,14 @@ window.addEventListener("resize", function(){
 }, true);
 
 
+// Продуктовые попапы
+
+let popupBtns = document.querySelectorAll(".catalog__item-link-more");
+let popupProductItem = document.querySelectorAll(".popup-product__item");
+
+popupBtns.forEach((el) => {
+    el.addEventListener('click', (e) => {
+        let path = e.currentTarget.getAttribute('data-path');
+        document.querySelector(`[data-target="${path}"]`).classList.add('popup-product__item_active');
+    })
+})
