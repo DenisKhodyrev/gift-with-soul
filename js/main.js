@@ -99,3 +99,17 @@ imgPreview.forEach((el) => {
         img.classList.add('popup-product__block-img-item-main-img_active');
     })
 })
+
+
+// попап - заявка
+
+let popupRequest = document.querySelector(".popup-request");
+let popupRequestbtn = document.querySelectorAll(".popup-request-btn");
+
+popupRequestbtn.forEach((el) => {
+    el.addEventListener("click", (e) => {
+        popupRequest.classList.add('popup-request_active');
+    })
+})
+
+
