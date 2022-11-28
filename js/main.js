@@ -50,6 +50,8 @@ window.addEventListener("resize", function(){
 let popupBtns = document.querySelectorAll(".catalog__item-link-more");
 let popupProductItem = document.querySelectorAll(".popup-product__item");
 let popupExit = document.querySelectorAll(".popup-product__exit");
+let popupBlock = document.querySelectorAll(".popup-product__block");
+
 
 popupBtns.forEach((el) => {
     el.addEventListener('click', (e) => {
@@ -61,7 +63,17 @@ popupBtns.forEach((el) => {
 popupExit.forEach((el) => {
     el.addEventListener('click', (e) => {
         let path = e.currentTarget.getAttribute('data-target');
-        console.log(path);
         document.querySelector(`[data-target="${path}"]`).classList.remove('popup-product__item_active');
+    })
+})
+
+popupProductItem.forEach((el) => {
+    el.addEventListener('click', (e) => {
+        let path = e.currentTarget.getAttribute('data-target');
+        let div = document.querySelector(`[data-target2="${path}"]`)
+        const withinBoundaries = e.composedPath().includes(div);
+        if ( ! withinBoundaries ) {
+            el.classList.remove('popup-product__item_active');
+        }
     })
 })
