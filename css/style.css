@@ -731,10 +731,6 @@ body {
 
 /* popup-product */
 
-.popup-product {
-    /* position: relative; */
-}
-
 .popup-product__item {
     opacity: 0;
     visibility: hidden;
@@ -760,7 +756,7 @@ body {
     width: 100%;
     height: 80vh;
     margin-top: 100px;
-    padding: 90px 40px 40px;
+    padding: 90px 40px 400px;
     border-radius: 20px;
     background-color: #FFFFFF;
     display: flex;
@@ -845,6 +841,7 @@ body {
     color: #333333;
     font-weight: 400;
     margin-bottom: 20px;
+    padding-bottom: 40px;
 }
 
 .popup-product__text-of-description p, ul {
@@ -859,6 +856,7 @@ body {
     position: absolute;
     top: 40px;
     right: 40px;
+    cursor: pointer;
 }
 
 /*certificate*/
