@@ -64,6 +64,7 @@ popupExit.forEach((el) => {
     el.addEventListener('click', (e) => {
         let path = e.currentTarget.getAttribute('data-target');
         document.querySelector(`[data-target="${path}"]`).classList.remove('popup-product__item_active');
+
     })
 })
 
@@ -75,5 +76,26 @@ popupProductItem.forEach((el) => {
         if ( ! withinBoundaries ) {
             el.classList.remove('popup-product__item_active');
         }
+    })
+})
+
+// переключение картинок в продуктовом попапе
+
+let imgPreview = document.querySelectorAll(".popup-product__block-img-item-preview");
+let imgMain = document.querySelectorAll(".popup-product__block-img-item-main-img");
+
+imgPreview.forEach((el) => {
+    el.addEventListener('click', (e) => {
+        let path = e.currentTarget.getAttribute('data-previewimg');
+        let img = document.querySelector(`[data-mainimg="${path}"]`)
+        imgPreview.forEach((ele) => {
+            ele.classList.remove('popup-product__block-img-item-preview_active');
+        });
+        el.classList.add('popup-product__block-img-item-preview_active');
+
+        imgMain.forEach((elem) => {
+            elem.classList.remove('popup-product__block-img-item-main-img_active');
+        })
+        img.classList.add('popup-product__block-img-item-main-img_active');
     })
 })
