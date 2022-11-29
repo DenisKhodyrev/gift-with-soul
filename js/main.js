@@ -105,6 +105,8 @@ imgPreview.forEach((el) => {
 
 let popupRequest = document.querySelector(".popup-request");
 let popupRequestbtn = document.querySelectorAll(".popup-request-btn");
+let popupRequestBlock = document.querySelector(".popup-request__block");
+
 
 popupRequestbtn.forEach((el) => {
     el.addEventListener("click", (e) => {
@@ -112,4 +114,12 @@ popupRequestbtn.forEach((el) => {
     })
 })
 
+popupRequest.addEventListener('click', (e) => {
+    // let path = e.currentTarget.getAttribute('data-target');
+    // let div = document.querySelector(`[data-target2="${path}"]`)
+    const withinBoundaries = e.composedPath().includes(popupRequestBlock);
+    if ( ! withinBoundaries ) {
+        popupRequest.classList.remove('popup-request_active');
+    }
+})
 

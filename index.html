@@ -803,11 +803,11 @@
                     <div class="popup-request__title"> Отправьте заявку </div>
                     <div class="popup-request__subtitle"> Мы свяжемся с Вами в ближайшее время </div>
                     <form class="popup-request__form form-request" action="#" method="post" enctype="multipart/form-data">
-                        <input class="form-request__name" name="name" type="text" placeholder="Ваше имя">
-                        <input class="form-request__tel" name="tel" type="text" placeholder="Телефон">
-                        <textarea class="form-request__comment"></textarea>
-                        <input class="form-request__checkbox" type="checkbox" name="happy" value="yes">
-                        <button class="form-request__btn"> Отправить заявку </button>
+                        <input class="form-request__input form-request__name" name="name" type="text" placeholder="Ваше имя">
+                        <input class="form-request__input form-request__tel" name="tel" type="tel" placeholder="Телефон">
+                        <textarea class="form-request__input form-request__comment" name="text" placeholder="Комментарий"></textarea>
+                        <p class="form-request__checkbox-text"> <input class="form-request__checkbox" type="checkbox" name="policy" value="yes" checked> Отправляя заявку Вы соглашаетесь на обработку персональных данных </p>
+                        <button class="form-request__btn" type="submit"> Отправить заявку </button>
                     </form>
                 </div>
             </div>
